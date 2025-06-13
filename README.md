@@ -1,76 +1,120 @@
 # Bài toán: Xây dựng phần mềm quản lý thu phí chung cư
 
+## Mục lục
 
-- [Bài toán: Xây dựng phần mềm quản lý thu phí chung cư](#bài-toán-xây-dựng-phần-mềm-quản-lý-thu-phí-chung-cư)
-  - [Mô tả yêu cầu](#mô-tả-yêu-cầu)
-    - [Ví dụ một mẫu sổ quản lý thu các khoản đóng góp:](#ví-dụ-một-mẫu-sổ-quản-lý-thu-các-khoản-đóng-góp)
-    - [1. Quản lý thông tin các khoản thu phí đóng góp](#1-quản-lý-thông-tin-các-khoản-thu-phí-đóng-góp)
-    - [2. Quản lý thu phí của các hộ gia đình](#2-quản-lý-thu-phí-của-các-hộ-gia-đình)
-    - [3. Chức năng tra cứu và tìm kiếm](#3-chức-năng-tra-cứu-và-tìm-kiếm)
-    - [4. Thống kê cơ bản](#4-thống-kê-cơ-bản)
-    - [5. Quản lý thông tin cơ bản về các hộ gia đình và nhân khẩu](#5-quản-lý-thông-tin-cơ-bản-về-các-hộ-gia-đình-và-nhân-khẩu)
-    - [6. Bảo mật và quản lý tài khoản](#6-bảo-mật-và-quản-lý-tài-khoản)
-    - [7. Quản lý các khoản thu phí gửi xe ở chung cư](#7-quản-lý-các-khoản-thu-phí-gửi-xe-ở-chung-cư)
-    - [8. Quản lý chi phí điện, nước, internet](#8-quản-lý-chi-phí-điện-nước-internet)
-  - [Yêu cầu kỹ thuật](#yêu-cầu-kỹ-thuật)
+- [Mô tả yêu cầu](#mô-tả-yêu-cầu)
+  - [Ví dụ mẫu sổ quản lý thu các khoản đóng góp](#ví-dụ-mẫu-sổ-quản-lý-thu-các-khoản-đóng-góp)
+  - [1. Quản lý thông tin các khoản thu phí](#1-quản-lý-thông-tin-các-khoản-thu-phí)
+  - [2. Quản lý việc thu phí hộ gia đình](#2-quản-lý-việc-thu-phí-hộ-gia-đình)
+  - [3. Tra cứu và tìm kiếm](#3-tra-cứu-và-tìm-kiếm)
+  - [4. Thống kê cơ bản](#4-thống-kê-cơ-bản)
+  - [5. Quản lý hộ gia đình và nhân khẩu](#5-quản-lý-hộ-gia-đình-và-nhân-khẩu)
+  - [6. Bảo mật và quản lý tài khoản](#6-bảo-mật-và-quản-lý-tài-khoản)
+  - [7. Quản lý phí gửi xe](#7-quản-lý-phí-gửi-xe)
+  - [8. Quản lý chi phí điện, nước, internet](#8-quản-lý-chi-phí-điện-nước-internet)
+- [Yêu cầu kỹ thuật](#yêu-cầu-kỹ-thuật)
 - [IT4082](#it4082)
 
+---
 
 ## Mô tả yêu cầu
 
-Chung cư BlueMoon tọa lạc ngay ngã tư Văn Phú được khởi công xây dựng năm 2021 và hoàn thành vào 2023. Chung cư được xây dựng trên diện tích 450m², gồm 30 tầng, tầng 1 làm kiot, 4 tầng đế, 24 tầng nhà ở và 1 tầng penhouse. Khi sở hữu nhà chung cư, hộ gia đình hoặc chủ sở hữu sẽ phải bỏ ra một khoản kinh phí đóng định kỳ để thực hiện vận hành và bảo dưỡng thường xuyên về cơ sở vật chất. Các hoạt động quản lý và thu phí ở chung cư BlueMoon được thực hiện bởi Ban quản trị chung cư do nhân dân sinh sống ở đây bầu ra.
+Chung cư **BlueMoon**, tọa lạc tại ngã tư Văn Phú, được khởi công xây dựng năm 2021 và hoàn thành vào năm 2023. Dự án gồm 30 tầng, trong đó:
 
-Hàng tháng Ban quản trị chung cư lập danh sách các khoản phí cần đóng với mỗi hộ gia đình và gửi thông báo thu tiền. Các khoản phí chung cư gồm nhiều loại:
+- Tầng 1: kiot
+- 4 tầng đế
+- 24 tầng nhà ở
+- 1 tầng penthouse
 
-- **Phí dịch vụ chung cư:** đây là loại phí bắt buộc nộp theo tháng, ban quản lý chung cư để chi trả vào các việc như: Lau dọn vệ sinh và bảo dưỡng các khu vực chung, làm đẹp cảnh quan của các khu vực chung; thu gom rác thải, bảo dưỡng sân vườn; đảm bảo an ninh... Phí dịch vụ chung cư được tính theo diện tích căn hộ sở hữu, hiện nay dao động từ 2.500 đồng tới 16.500 đồng/m²/tháng.
-- **Phí quản lý chung cư:** đây cũng là chi phí bắt buộc nộp theo tháng, dùng cho tất cả các hoạt động quản lý cũng như vận hành nhà chung cư. Chi phí này phụ thuộc vào tiêu chuẩn, chất lượng của dự án chung cư đó ví dụ như chung cư cao cấp, chung cư thường hay nhà chung cư giá rẻ. Với chung cư BlueMoon phí quản lý ở mức từ 7.000 đồng/m².
-- **Các khoản đóng góp:** mà ban quản trị phối hợp với chính quyền địa phương, tổ dân phố để thực hiện thu (ví dụ quỹ vì người nghèo, quỹ biển đảo, quỹ từ thiện,...). Các khoản đóng góp này thu theo từng đợt, không bắt buộc và thu theo tinh thần tự nguyện.
+Các hộ gia đình sẽ phải đóng định kỳ các khoản phí để phục vụ quản lý và vận hành chung cư. Ban quản trị do cư dân bầu chọn chịu trách nhiệm thu và quản lý các khoản phí này.
 
-Ban quản trị hiện đang quản lý việc thu phí theo phương thức thủ công, có sử dụng một số công cụ hỗ trợ như Excel nhưng hiệu quả quản lý chưa cao. Hiện tại Ban quản trị có nhu cầu xây dựng một phần mềm quản lý thu các loại phí tại chung cư BlueMoon.
+### Các loại phí chính
 
-### Ví dụ một mẫu sổ quản lý thu các khoản đóng góp:
+- **Phí dịch vụ chung cư** (bắt buộc, tính theo m²):  
+  Dao động từ 2.500 đến 16.500 đồng/m²/tháng. Dùng cho các dịch vụ như vệ sinh, bảo dưỡng, an ninh, thu gom rác...
 
-| Hộ gia đình | Phí dịch vụ | Phí quản lý | Đóng góp | Tổng cộng |
-|-------------|-------------|-------------|----------|-----------|
-| Hộ 1        | 500,000 VND | 140,000 VND | 50,000 VND | 690,000 VND |
-| Hộ 2        | 700,000 VND | 196,000 VND | 100,000 VND | 996,000 VND |
+- **Phí quản lý chung cư** (bắt buộc):  
+  Phục vụ cho công tác vận hành quản lý. BlueMoon thu mức từ 7.000 đồng/m²/tháng.
 
+- **Các khoản đóng góp tự nguyện**:  
+  Ví dụ: Quỹ vì người nghèo, quỹ từ thiện, biển đảo... thu theo đợt, không bắt buộc.
 
-### 1. Quản lý thông tin các khoản thu phí đóng góp
-- Quản lý các khoản phí dịch vụ và quản lý của mỗi hộ gia đình.
-- Quản lý các khoản đóng góp không bắt buộc.
+Hiện tại việc quản lý đang được thực hiện thủ công hoặc bằng Excel. Ban quản trị mong muốn xây dựng **phần mềm quản lý thu phí** để chuyên nghiệp hóa quy trình này.
 
-### 2. Quản lý thu phí của các hộ gia đình
-- Theo dõi và ghi nhận các khoản phí đã được thanh toán.
-- Cung cấp hóa đơn và biên lai cho các hộ gia đình.
+---
 
-### 3. Chức năng tra cứu và tìm kiếm
-- Tra cứu thông tin các khoản phí của từng hộ gia đình.
-- Tìm kiếm thông tin liên quan đến các khoản phí và đóng góp.
+### Ví dụ mẫu sổ quản lý thu các khoản đóng góp
+
+| Hộ gia đình | Phí dịch vụ | Phí quản lý | Đóng góp   | Tổng cộng     |
+|-------------|-------------|-------------|------------|---------------|
+| Hộ 1        | 500,000 VND | 140,000 VND | 50,000 VND | 690,000 VND   |
+| Hộ 2        | 700,000 VND | 196,000 VND | 100,000 VND| 996,000 VND   |
+
+---
+
+### 1. Quản lý thông tin các khoản thu phí
+
+- Theo dõi phí dịch vụ, phí quản lý theo từng hộ
+- Quản lý các khoản đóng góp tự nguyện theo đợt
+
+---
+
+### 2. Quản lý việc thu phí hộ gia đình
+
+- Ghi nhận các khoản đã thanh toán
+- Cung cấp hóa đơn/biên lai
+
+---
+
+### 3. Tra cứu và tìm kiếm
+
+- Tra cứu thông tin khoản phí theo từng hộ
+- Tìm kiếm theo tên hộ, thời gian, loại phí...
+
+---
 
 ### 4. Thống kê cơ bản
-- Cung cấp báo cáo thống kê về các khoản thu phí.
-- Theo dõi tình trạng thanh toán của các hộ gia đình.
 
-### 5. Quản lý thông tin cơ bản về các hộ gia đình và nhân khẩu
-- Quản lý thông tin hộ khẩu và nhân khẩu đang sinh sống tại BlueMoon.
-- Cung cấp thông tin chi tiết về hộ gia đình, nhân khẩu trong hộ, các hoạt động biến đổi nhân khẩu, tạm vắng, tạm trú,...
+- Thống kê tổng thu theo tháng, quý, năm
+- Theo dõi tỷ lệ hoàn thành nghĩa vụ đóng phí
+
+---
+
+### 5. Quản lý hộ gia đình và nhân khẩu
+
+- Quản lý thông tin hộ khẩu, nhân khẩu
+- Ghi nhận biến động cư trú, tạm trú, tạm vắng
+
+---
 
 ### 6. Bảo mật và quản lý tài khoản
-- Các chức năng này chỉ truy cập được sau khi Ban quản trị đăng nhập thành công với tài khoản đã cung cấp.
-- Ban quản trị cũng có thể quản lý các thông tin cá nhân và thay đổi mật khẩu đăng nhập.
 
+- Truy cập hệ thống sau khi đăng nhập
+- Cho phép đổi mật khẩu, cập nhật thông tin tài khoản
 
-### 7. Quản lý các khoản thu phí gửi xe ở chung cư
-- Thu phí từng tháng theo thông tin phương tiện đăng ký của hộ gia đình.
-- Phí gửi xe máy hàng tháng là 70.000 VND/xe/một tháng.
-- Phí gửi ô tô là 1.200.000 VND/xe/một tháng.
+---
+
+### 7. Quản lý phí gửi xe
+
+- Ghi nhận phí gửi xe theo phương tiện đăng ký
+  - Xe máy: 70.000 VND/xe/tháng
+  - Ô tô: 1.200.000 VND/xe/tháng
+
+---
 
 ### 8. Quản lý chi phí điện, nước, internet
-- Thu hộ từng tháng theo thông báo từ các công ty cung cấp dịch vụ tương ứng.
+
+- Thu hộ dựa theo thông báo của nhà cung cấp dịch vụ
+
+---
 
 ## Yêu cầu kỹ thuật
 
-Phần mềm dự kiến được phát triển dưới dạng một ứng dụng desktop với công nghệ Java, dữ liệu của phần mềm được lưu trữ tập trung trên MySQL server. Nhóm phát triển có thể tìm hiểu và lựa chọn các công nghệ khác phù hợp trong xây dựng giải pháp cho bài toán.
-# IT4082
-# IT4082
+- Phần mềm phát triển dưới dạng **ứng dụng desktop**
+- Ngôn ngữ: **Java**
+- Dữ liệu lưu trữ trên **MySQL Server**
+- Có thể thay đổi công nghệ nếu phù hợp hơn với giải pháp
+
+---
+
+## IT4082
