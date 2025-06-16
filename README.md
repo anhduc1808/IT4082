@@ -51,7 +51,7 @@ Hiện tại việc quản lý đang được thực hiện thủ công hoặc b
 | Hộ 2        | 700,000 VND | 196,000 VND | 100,000 VND| 996,000 VND   |
 
 ---
-
+VERSION 1:
 ### 1. Quản lý thông tin các khoản thu phí
 
 - Theo dõi phí dịch vụ, phí quản lý theo từng hộ
@@ -87,14 +87,15 @@ Hiện tại việc quản lý đang được thực hiện thủ công hoặc b
 
 ---
 
-### 6. Bảo mật và quản lý tài khoản
+VERSION 2:
+### 1. Bảo mật và quản lý tài khoản
 
 - Truy cập hệ thống sau khi đăng nhập
 - Cho phép đổi mật khẩu, cập nhật thông tin tài khoản
 
 ---
 
-### 7. Quản lý phí gửi xe
+### 2. Quản lý phí gửi xe
 
 - Ghi nhận phí gửi xe theo phương tiện đăng ký
   - Xe máy: 70.000 VND/xe/tháng
@@ -102,7 +103,7 @@ Hiện tại việc quản lý đang được thực hiện thủ công hoặc b
 
 ---
 
-### 8. Quản lý chi phí điện, nước, internet
+### 3. Quản lý chi phí điện, nước, internet
 
 - Thu hộ dựa theo thông báo của nhà cung cấp dịch vụ
 
